@@ -9,7 +9,6 @@
 #ifndef CDT_GRECTANGLE_H
 #define CDT_GRECTANGLE_H
 
-#include <stdexcept>
 #include "cdt_gpoint.h"
 #include "cdt_gdimension.h"
 
@@ -20,8 +19,8 @@ class GRectangle : public GPoint, public GDimension {
 protected:
 	
 	virtual bool equalsInner(const Object_i* obj) const override {
-		return (dynamic_cast<const GPoint*>(obj))->equals(&getLocation())
-		 && (dynamic_cast<const GDimension*>(obj))->equals(&getSize());
+		return (dynamic_cast<const GPoint*>(obj))->equals(new GPoint(getLocation()))
+		 && (dynamic_cast<const GDimension*>(obj))->equals(new GDimension(getSize()));
 	}
 	// virtual method < equalsInner(Object_i*) > : override
 	
@@ -83,16 +82,16 @@ public:
 	// method < translate(int,int) >
 	// - relocate start point of this GRectangle object and return itself
 	
-	inline bool intersects(const GRectangle r) const {	return contains(r.getLocation()) || r.contains(getLocation());	}
+	inline bool intersects(const GRectangle& r) const {	return contains(r.getLocation()) || r.contains(getLocation());	}
 	// method < intersects(GRectangle) >
 	// - return whether this GRectangle object and parameter GRectangle object intersect
 		
-	GRectangle* getIntersection(const GRectangle) const;
+	GRectangle* getIntersection(const GRectangle&) const;
 	// method < getIntersection(GRectangle)"
 	// - return new GRectangle object representing the intersection of this GRectangle object with parameter GRectangle object
 	// - return null pointer when there is no intersection between two GRectangle objects
 	
-	GRectangle* getUnion(const GRectangle) const;
+	GRectangle* getUnion(const GRectangle&) const;
 	// method < getUnion(GRectangle) >
 	// - return new GRectangle object which is the union of this GRectangle object with parameter GRectangle object
 

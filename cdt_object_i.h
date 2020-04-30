@@ -2,8 +2,10 @@
 
 	HEADER FILE : cdt_object_i
 	
-	interface < Object_i > : histest super clas of all derived classes in cdt project 
-	 
+	interface < Object_i > : histest super class of all derived classes in cdt project 
+	- method < getHashCode() >
+	- method < equals() >
+	- method < toString() >
 */
 
 #ifndef CDT_OBJECT_I_H
