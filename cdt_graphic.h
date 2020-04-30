@@ -8,5 +8,6 @@
 #define CDT_GRAPHIC_H
 
 #include "cdt_gpoint.h"
+#include "cdt_gdimension.h"
 
 #endif

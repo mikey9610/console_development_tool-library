@@ -23,15 +23,16 @@ protected:
 	// field ( width , height ) : width , height
 		
 	virtual bool equalsInner(const Object_i* obj) const override {
-		auto objDimension = dynamic_cast<const GPoint*>(obj);
+		auto objDimension = dynamic_cast<const GDimension*>(obj);
 		return width_ == objDimension->width_ && height_ == objDimension->height_;
 	}
-	// virtual method < equalsInner(cosnt Object_i*) > : override
+	// virtual method < equalsInner(Object_i*) > : override
 	
 public:
 	
 	GDimension()
 	 : Object_i(302), width_(0), height_(0) {}	 
+	 
 	GDimension(int width, int height)
 	 : Object_i(302), width_(width), height_(height) {}
 	// constructor - 2
@@ -50,10 +51,6 @@ public:
 	inline void setSize(GDimension d) {
 		setWidth(d.width_);
 		setHeight(d.height_);
-	}
-	inline void setSize(GDimension* d) {
-		setX(d->width_);
-		setY(d->height_);
 	}
 	// method < set >
 	// - constraint : width>=0 & height>=0

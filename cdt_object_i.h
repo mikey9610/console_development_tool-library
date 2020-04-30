@@ -21,7 +21,7 @@ protected:
 	// field ( hashcode ) : integer value which indicates class type
 	
 	virtual bool equalsInner(const Object_i* obj) const {	return this == obj;	}
-	// virtual method < equalsInner(const Object_i*) > : return whether this object is same with parameter object
+	// virtual method < equalsInner(Object_i*) > : return whether this object is same with parameter object
 	
 	Object_i(int hc=0)
 	 : hashCode_(hc) {}
@@ -34,7 +34,7 @@ public:
 	// - return hashcode of this class type
 	
 	inline bool equals(const Object_i* obj) const {	return (this->hashCode_ == obj->getHashCode()) ? equalsInner(obj) : false;	}
-	// virtual method < equals(const Object_i*) >
+	// virtual method < equals(Object_i*) >
 	// - return whether this object is same with parameter one
 		
 	virtual string toString() const {	return to_string(hashCode_);	}
