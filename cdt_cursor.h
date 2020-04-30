@@ -1,8 +1,8 @@
 /*
 
-	HEADER FILE : cdt_renderer
+	HEADER FILE : cdt_cursor
 	
-	class < Renderer > : singletone class that renders console screen
+	class < Cursor > : singletone class that renders console screen
 	
 */
 
@@ -19,7 +19,7 @@ typedef COORD CurPos;
 typedef CONSOLE_CURSOR_INFO CurInfo;
 // type define
 
-class Renderer {
+class Cursor {
 protected:
 	
 	CONSOLE_CURSOR_INFO* info_;
@@ -29,10 +29,10 @@ protected:
 	Color background_;
 	// field < foreground , background > : foreground and background Color 
 	
-	static Renderer* instance_;
+	static Cursor* instance_;
 	// singletone pointer
 	
-	Renderer()
+	Cursor()
 	 :	info_(new CurInfo{true,10}),
 	 	foreground_(C_BRIGHT_WHITE),
 	 	background_(C_BLACK) {}
@@ -40,8 +40,8 @@ protected:
 	
 public:
 	
-	static Renderer* useRenderer();
-	// static method < useRenderer() >
+	static Cursor* useCursor();
+	// static method < useCursor() >
 	// - get singletone instance
 	
 	void setPos(int,int);
@@ -65,7 +65,7 @@ public:
 	
 };
 
-static Renderer& renderer = *Renderer::useRenderer();
+static Cursor& renderer = *Cursor::useCursor();
 
 }
 
