@@ -8,7 +8,9 @@
 #define CDT_SQL_TABLE_H
 
 #include <iostream>
+#include <vector>
 using namespace std;
+#include "cdt_sql_datatype.h"
 
 namespace cdt {
 
@@ -21,11 +23,15 @@ protected:
 	string name_;
 	// field < name >
 	
+	
+	
 	CDT_SQL_Table(string name)
 	 : name_(name) {}
 	// constructor (concealed)
 
 public:
+	
+	deque<
 	
 	
 };
