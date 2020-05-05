@@ -9,9 +9,8 @@
 #ifndef CDT_GBUTTON_H
 #define CDT_GBUTTON_H
 
-#include "cdt_graphic.h"
-#include "cdt_glabel_i.h"
 #include "cdt_gcomponent_i.h"
+#include "cdt_glabel_i.h"
 
 namespace cdt {
 namespace graphic {

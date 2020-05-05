@@ -4,8 +4,8 @@
 CPP      = g++.exe -D__DEBUG__
 CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
-OBJ      = lib/driver.o lib/cdt_grectangle.o lib/cdt_cursor.o lib/cdt_gcomponent_i.o lib/cdt_gcontainer.o lib/cdt_ds_set.o
-LINKOBJ  = lib/driver.o lib/cdt_grectangle.o lib/cdt_cursor.o lib/cdt_gcomponent_i.o lib/cdt_gcontainer.o lib/cdt_ds_set.o
+OBJ      = cdt_cursor.o cdt_ds_set.o cdt_gcomponent_i.o cdt_gcontainer.o cdt_grectangle.o driver.o
+LINKOBJ  = cdt_cursor.o cdt_ds_set.o cdt_gcomponent_i.o cdt_gcontainer.o cdt_grectangle.o driver.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Users/W40884/JM/workplace/[console_development_tool]/lib"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" -I"C:/Users/W40884/JM/workplace/[console_development_tool]/lib"
@@ -24,20 +24,20 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
 
-lib/driver.o: lib/driver.cpp
-	$(CPP) -c lib/driver.cpp -o lib/driver.o $(CXXFLAGS)
+cdt_cursor.o: cdt_cursor.cpp
+	$(CPP) -c cdt_cursor.cpp -o cdt_cursor.o $(CXXFLAGS)
 
-lib/cdt_grectangle.o: lib/cdt_grectangle.cpp
-	$(CPP) -c lib/cdt_grectangle.cpp -o lib/cdt_grectangle.o $(CXXFLAGS)
+cdt_ds_set.o: cdt_ds_set.cpp
+	$(CPP) -c cdt_ds_set.cpp -o cdt_ds_set.o $(CXXFLAGS)
 
-lib/cdt_cursor.o: lib/cdt_cursor.cpp
-	$(CPP) -c lib/cdt_cursor.cpp -o lib/cdt_cursor.o $(CXXFLAGS)
+cdt_gcomponent_i.o: cdt_gcomponent_i.cpp
+	$(CPP) -c cdt_gcomponent_i.cpp -o cdt_gcomponent_i.o $(CXXFLAGS)
 
-lib/cdt_gcomponent_i.o: lib/cdt_gcomponent_i.cpp
-	$(CPP) -c lib/cdt_gcomponent_i.cpp -o lib/cdt_gcomponent_i.o $(CXXFLAGS)
+cdt_gcontainer.o: cdt_gcontainer.cpp
+	$(CPP) -c cdt_gcontainer.cpp -o cdt_gcontainer.o $(CXXFLAGS)
 
-lib/cdt_gcontainer.o: lib/cdt_gcontainer.cpp
-	$(CPP) -c lib/cdt_gcontainer.cpp -o lib/cdt_gcontainer.o $(CXXFLAGS)
+cdt_grectangle.o: cdt_grectangle.cpp
+	$(CPP) -c cdt_grectangle.cpp -o cdt_grectangle.o $(CXXFLAGS)
 
-lib/cdt_ds_set.o: lib/cdt_ds_set.cpp
-	$(CPP) -c lib/cdt_ds_set.cpp -o lib/cdt_ds_set.o $(CXXFLAGS)
+driver.o: driver.cpp
+	$(CPP) -c driver.cpp -o driver.o $(CXXFLAGS)

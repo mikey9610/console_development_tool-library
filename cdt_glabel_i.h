@@ -9,8 +9,7 @@
 #ifndef CDT_GLABEL_I_H
 #define CDT_GLABEL_I_H
 
-#include <iostream>
-using namespace std;
+#include "cdt_grectangle.h"
 #include "cdt_math.h"
 
 namespace cdt {

@@ -9,7 +9,9 @@
 #ifndef CDT_GCOMPONENT_I_H
 #define CDT_GCOMPONENT_I_H
 
-#include "cdt_graphic.h"
+#include "cdt_grectangle.h"
+#include "cdt_color.h"
+#include "cdt_cursor.h"
 
 namespace cdt {
 namespace graphic {
