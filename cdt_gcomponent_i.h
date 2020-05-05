@@ -16,6 +16,8 @@ namespace graphic {
 	
 class GComponent_i : public GRectangle {
 
+friend class GContainer_i;
+
 protected:
 	
 	string name_;
@@ -78,22 +80,16 @@ public:
 	inline bool isVisible() const {	return this->visible_;	}
 	// method < get >
 	
-//	GRectangle& getBounds(GRectangle&) const;
-	/*
-		get methods
-	*/
-	
 	inline void setName(string name) {	this->name_ = name;	}
 	inline void setForeground(Color foreground) {	this->foreground_ = foreground;	}
 	inline void setBackground(Color background) {	this->background_ = background;	}
 	inline void setEnabled(bool enabled) {	this->enabled_ = enabled;	}
 	inline void setVisible(bool visible) {	this->visible_ = visible;	}
 	// method < set >
-
 	
+//	GRectangle& getBounds(GRectangle&) const;
 //	virtual void notify(GEvent*);
 	
-
 	virtual void render() {
 		GRectangle* confines = getAbsBounds();
 		if(confines == nullptr)	return;
@@ -108,7 +104,7 @@ public:
 
 	virtual string toString() const override {	return this->name_;	}
 	//	virtual method < toString() > : override
-	
+
 };
 
 }

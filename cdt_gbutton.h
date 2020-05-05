@@ -17,6 +17,10 @@ namespace cdt {
 namespace graphic {
 	
 class GButton : public GComponent_i, public GLabel_i {	
+protected:
+	
+	
+
 public:
 	
 	GButton(string name="button")
@@ -24,7 +28,7 @@ public:
 	 	GComponent_i(name) {}
 	// constructor
 	
-	virtual void render() {
+	virtual void render() override {
 		GComponent_i::render();
 		GLabel_i::render(getAbsBounds());
 	}
