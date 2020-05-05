@@ -5,7 +5,6 @@
 */
 #include "cdt_gbutton.h"
 #include "cdt_gpanel.h"
-using namespace cdt;
 using namespace cdt::graphic;
 
 #include "cdt_ds_set.cpp"
@@ -90,6 +89,4 @@ int main(int argc, char** argv) {
 	for(const auto& v : s2-s1)
 		cout << v << " ";
 	cout << endl;
-	
-	return 0;
 }
